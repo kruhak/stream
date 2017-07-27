@@ -1,15 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Home from '@/components/HomePage'
+import Channel from '@/components/ChannelPage'
+import ChannelsList from '@/components/ChannelsListPage'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/channel',
+      name: 'channels',
+      component: ChannelsList
+    },
+    {
+      path: '/channel/:id',
+      name: 'channel',
+      component: Channel
     }
   ]
 })
