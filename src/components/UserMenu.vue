@@ -6,7 +6,7 @@
         <span>{{ user.name }}</span>
       </template>
 
-      <b-dropdown-item to="#">Your channel</b-dropdown-item>
+      <router-link class="dropdown-item" :to="{ name: 'settings' }">Your channel</router-link>
       <b-dropdown-item @click="signOut">Sign out</b-dropdown-item>
     </b-nav-item-dropdown>
 

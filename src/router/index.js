@@ -5,6 +5,7 @@ import Channel from '@/pages/Channel'
 import ChannelList from '@/pages/ChannelList'
 import SignIn from '@/pages/SignIn'
 import SignUp from '@/pages/SignUp'
+import Settings from '@/pages/Settings'
 import PageNotFound from '@/pages/PageNotFound'
 
 Vue.use(Router);
@@ -35,6 +36,11 @@ export default new Router({
       path: '/signup',
       name: 'signup',
       component: SignUp
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: Settings,
     },
     {
       path: '*',
