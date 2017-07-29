@@ -12,24 +12,11 @@
 
 <script>
   import Video from '@/components/Video';
-  import channels from '@/channels';
 
   export default {
-    data: function () {
-      return {
-        channel: null,
-      }
-    },
-
-    created: function () {
-      this.fetchChannelData();
-    },
-
-    methods: {
-      fetchChannelData() {
-        setTimeout(() => {
-          this.channel = channels[this.$route.params.id];
-        }, 1000);
+    computed: {
+      channel: function () {
+        return this.$store.getters['channel/getChannelById'](this.$route.params.id);
       }
     },
 

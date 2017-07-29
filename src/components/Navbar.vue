@@ -13,29 +13,18 @@
           <router-link class="nav-link" :to="{ name: 'channels' }">Channels</router-link>
       </b-nav>
 
-      <b-nav is-nav-bar class="ml-auto">
-        <b-nav-item-dropdown right>
+      <st-user-menu class="ml-auto"></st-user-menu>
 
-          <template slot="button-content">
-            <span>User</span>
-          </template>
-
-          <b-dropdown-item to="#">Profile</b-dropdown-item>
-          <b-dropdown-item to="#">Signout</b-dropdown-item>
-        </b-nav-item-dropdown>
-
-      </b-nav>
     </b-collapse>
   </b-navbar>
-
 </template>
 
 <script>
+  import UserMenu from '@/components/UserMenu'
+
   export default {
-    name: 'st-navbar'
-  };
+    components: {
+      'st-user-menu': UserMenu
+    }
+  }
 </script>
-
-<style>
-
-</style>

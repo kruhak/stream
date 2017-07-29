@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/HomePage'
-import Channel from '@/components/ChannelPage'
-import ChannelsList from '@/components/ChannelsListPage'
+import Home from '@/pages/Home'
+import Channel from '@/pages/Channel'
+import ChannelList from '@/pages/ChannelList'
+import SignIn from '@/pages/SignIn'
+import SignUp from '@/pages/SignUp'
+import PageNotFound from '@/pages/PageNotFound'
 
 Vue.use(Router);
 
@@ -16,12 +19,26 @@ export default new Router({
     {
       path: '/channel',
       name: 'channels',
-      component: ChannelsList
+      component: ChannelList
     },
     {
       path: '/channel/:id',
       name: 'channel',
       component: Channel
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: SignIn
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp
+    },
+    {
+      path: '*',
+      component: PageNotFound
     }
   ]
 })

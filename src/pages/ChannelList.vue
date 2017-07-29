@@ -8,13 +8,11 @@
 
 <script>
   import ChannelCard from '@/components/ChannelCard'
-  import channels from '@/channels';
+  import { mapState } from 'vuex'
 
   export default {
-    data: function () {
-      return {
-        channels: channels
-      }
+    computed: {
+      ...mapState('channel', ['channels'])
     },
 
     components: {

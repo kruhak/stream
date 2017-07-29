@@ -8,13 +8,13 @@
 
 <script>
   import ChannelCard from '@/components/ChannelCard'
-  import channels from '@/channels';
+  import { mapGetters } from 'vuex'
 
   export default {
-    data: function () {
-      return {
-        channels: channels
-      }
+    computed: {
+      channels: function () {
+        return this.$store.getters['channel/getActiveChannels']();
+      },
     },
 
     components: {
@@ -22,7 +22,3 @@
     },
   }
 </script>
-
-<style>
-
-</style>
